@@ -22,6 +22,9 @@ Notable changes between versions.
 #### Addons
 
 * Fix Prometheus data directory location ([#203](https://github.com/poseidon/typhoon/pull/203))
+* Configure Prometheus to scrape Kubelets directly with bearer token auth instead of proxying through the apiserver ([#217](https://github.com/poseidon/typhoon/pull/217)) 
+  * Security improvement: Drop RBAC permission from `nodes/proxy` to `nodes/metrics`
+  * Performance: Remove proxied scrape load from the apiserver
 * Update Grafana from v5.04 to v5.1.2 ([#208](https://github.com/poseidon/typhoon/pull/208))
   * Disable Grafana Google Analytics by default ([#214](https://github.com/poseidon/typhoon/issues/214))
 
